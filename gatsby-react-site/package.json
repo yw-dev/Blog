@@ -37,6 +37,7 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "prettier": "^1.15.2"
   },
   "repository": {
@@ -45,5 +46,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }

@@ -4,24 +4,8 @@ module.exports = {
         title: `Gatsby Default Starter`,
         description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
         author: `@gatsbyjs`,
-        menu: {
-            Home: '/',
-            //试练
-            trial: '/trial',
-            //技术
-            technology: '/technology',
-            //随笔
-            essays: '/essays',
-            //休闲
-            leisure: '/leisure',
-            //归档
-            archives: '/archives',
-            //关于
-            about: '/about',
-            //留言
-            messages: '/messages',
-        },
     },
+    pathPrefix: "https://github.com/yw-dev/react-blog.io.git",
     plugins: [
         'gatsby-plugin-stylus',
         `gatsby-plugin-react-helmet`,
