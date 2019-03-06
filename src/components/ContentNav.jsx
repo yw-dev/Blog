@@ -28,21 +28,31 @@ const HeadNav = styled.div`
 `;
 
 const ContentNav = ( { path, title, keyword } ) => {
-    const uri = path.split("/");
+    var uri = [];
     var str = "";
+    if(path){
+        uri = path.split("/");
+    }
 return (
     <ContentHead>
         <HeadNav>
             <Link className="title" to="/">
                 <i className="fa fa-home fa-fw" aria-hidden="true"></i><i className="fa fa-angle-right fa-fw" aria-hidden="true">&nbsp;</i>
             </Link>
-            {uri && uri.map(ur => {
-                str += "/"+ur;  
-                return (
-                    <Link className="title"  to={str}>{str}<i className="fa fa-angle-right fa-fw" aria-hidden="true">&nbsp;</i></Link>
-                )}
+            {uri && uri.map((ur, index) => {
+                if(ur){
+                    str += "/"+ur;  
+                    if(++index == uri.length){                    
+                        return (
+                            <span>{keyword}</span>
+                        )
+                    } else {
+                        return (
+                            <Link key={index} className="title"  to={str}>{ur}<i className="fa fa-angle-right fa-fw" aria-hidden="true">&nbsp;</i></Link>
+                        )
+                    }}
+                }
             )}
-            <span>{keyword}</span>
         </HeadNav>
     </ContentHead>
 )};

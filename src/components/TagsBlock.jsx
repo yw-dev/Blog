@@ -24,23 +24,43 @@ const TagsContainer = styled.div`
   }
 `;
 
-const TagsBlock = ({ spath, list }) => (
-  <TagsContainer>
+const TagsBlock = ({ spath, list }) => {
+  if(list => {
+    if (typeof Array.isArray === "function") {
+        return Array.isArray(list);
+      } else {
+        return Object.prototype.toString.call(list) === "[object Array]";
+      }
+  }){
 
-    {list.map((element, index) => {
-      return (
-        <Link key={index} to={`/${spath}/${element}`}>
-          <span>{element}</span>
-        </Link>
-      )}
-    )}
+  }
+  if(Array.isArray(list)){
+    return (
+      <TagsContainer>
+        {list.map((element, index) => {
+          return (
+            <Link key={index} to={`/${spath}/${element}`}>
+              <span>{element}</span>
+            </Link>
+          )}
+        )}
+      </TagsContainer>
+    )
+  } else {    
+    return (
+      <TagsContainer>    
+        <Link to={`/${spath}/${list}`}>
+          <span>{list}</span>
+        </Link>    
+      </TagsContainer>
+    )
+  }
 
-  </TagsContainer>
-);
+};
 
 export default TagsBlock;
 
 TagsBlock.propTypes = {
-    spath: PropTypes.string,
-    list: PropTypes.array,
+    spath: PropTypes.string.isRequired,
+    list: PropTypes.array.isRequired,
 };

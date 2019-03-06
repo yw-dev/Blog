@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     ...config,
   },
+  pathPrefix: "/Fan",
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',

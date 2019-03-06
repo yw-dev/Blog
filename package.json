@@ -12,6 +12,7 @@
   },
   "scripts": {
     "develop": "gatsby develop",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "build": "gatsby local build",
     "serve": "gatsby serve",
     "clean": "rm -rf public && rm -rf .cache",
@@ -19,8 +20,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "start": "npm run develop"
   },
   "dependencies": {
     "@babel/core": "^7.2.2",
