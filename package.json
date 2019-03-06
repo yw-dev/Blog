@@ -1,25 +1,26 @@
 {
-  "name": "gatsby-tutorial-starter",
-  "author": "Justin Formentin",
-  "title": "Gatsby V2 Tutorial Starter",
+  "name": "react-blog",
+  "author": "扬帆",
+  "title": "React Blog",
   "description": "My Blog",
-  "homepage": "https://gatsby-tutorial-starter.netlify.com",
+  "homepage": "https://react-blog.netlify.com",
   "license": "MIT",
-  "version": "0.0.7",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/justinformentin/gatsby-v2-tutorial-starter"
+    "url": "git@github.com:yw-dev/react-blog.io.git"
   },
   "scripts": {
     "develop": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby local build",
     "serve": "gatsby serve",
     "clean": "rm -rf public && rm -rf .cache",
     "format-output": "prettier src/**/*.{js,jsx}",
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
-    "start": "npm run develop"
+    "start": "npm run develop",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "@babel/core": "^7.2.2",
@@ -33,7 +34,7 @@
     "gatsby-plugin-emotion": "^4.0.1",
     "gatsby-plugin-google-analytics": "^2.0.9",
     "gatsby-plugin-manifest": "^2.0.13",
-    "gatsby-plugin-offline": "^2.0.21",
+    "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-plugin-sharp": "^2.0.20",
     "gatsby-plugin-sitemap": "^2.0.4",
@@ -41,9 +42,10 @@
     "gatsby-plugin-typography": "^2.2.5",
     "gatsby-remark-images": "^3.0.1",
     "gatsby-remark-prismjs": "^3.2.4",
-    "gatsby-source-filesystem": "^2.0.13",
+    "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "^2.2.6",
     "gatsby-transformer-sharp": "^2.1.13",
+    "gh-pages": "^2.0.1",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
